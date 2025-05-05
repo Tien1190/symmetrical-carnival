@@ -1,0 +1,181 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>GiayBongDa</title>
+	<link rel="stylesheet" href="css.css">
+	<style>
+	button.active {
+  background-color: #333;
+  color: white;
+}
+</style>
+</head>
+
+<body>
+	<nav class="navbar">
+	   <div class="top">
+            <div class="logo"><img src="https://i.ibb.co/fY3rrpWf/logo.png" width="100" alt="logo"></div>
+            <div class="search-bar">
+                <input type="text" placeholder="Tìm kiếm mặt hàng...">
+                <button>tìm kiếm</button>
+		</div>
+		   <div class="user">
+           <button onclick="window.location.href='login.html'">Đăng nhập</button>
+		   </div>
+        </div>
+        <div class="menu">
+            <a href="TrangChu.html">TRANG CHỦ</a>
+            <a href="Giaybongda.html">GIÀY BÓNG ĐÁ</a>
+            <a href="Phukien.html">PHỤ KIỆN</a>
+			<a href="#">THƯƠNG HIỆU</a>
+			<a href="cartt.html">GIỎ HÀNG</a>
+			<a href="#">DỊCH VỤ</a>
+        </div>
+    </nav>
+	<div class="giaydabong">
+	<div class="filter-buttons">
+		<div class="boots">
+		 <h2>Các loại giày</h2>
+         <button data-filter="all">TẤT CẢ</button>
+         <button data-filter="Giaycotunhien">GIÀY CỎ TỰ NHIÊN </button>
+         <button data-filter="Giayconhantao">GIÀY CỎ NHÂN TẠO</button>
+		 <button data-filter="Giayfutsal">GIÀY FUTSAL</button>
+		 <button data-filter="Giaytreem">GIÀY ĐÁ BÓNG TRẺ EM</button>
+		</div>
+		<div class="brands">
+        <h2>Thương hiệu</h2>
+        <button data-brand="all">TẤT CẢ</button>
+        <button data-brand="Mizuno">Mizuno</button>
+        <button data-brand="AKKA">AKKA</button>
+	    <button data-brand="NIKE">NIKE</button>
+		<button data-brand="PUMA">PUMA</button>
+		<button data-brand="Adias">Adias</button>
+		<button data-brand="Desporte">Desporte</button>
+</div>
+    </div>
+	<section class="product-boots-list">
+		<img src="https://file.hstatic.net/200000174405/collection/19238246_1997064527179566_5473797071884482645_o_ff15685be80c4d21973dcb914398e04f.jpg" width="100%" height="200" alt="bannergiay">
+        <div class="product" data-category="Giaycotunhien" data-brand="Mizuno" onclick="viewProduct('Giày đá bóng Mizuno Alpha II Pro FG Platinum Silver', '2500000', 'https://product.hstatic.net/1000061481/product/anh_sb_1-01-0-02-212414124222-2-2_a60cb411eb09408299427efe5022cdd6_1024x1024.jpg', 'Mizuno')">
+            <img src="https://product.hstatic.net/1000061481/product/anh_sb_1-01-0-02-212414124222-2-2_a60cb411eb09408299427efe5022cdd6_1024x1024.jpg" width="200" alt="giay1">
+            <h3>Giày đá bóng Mizuno Alpha II Pro FG Platinum Silver</h3>
+            <p class="gia">Giá: 2.500.500</p>
+            
+        </div>
+		<div class="product" data-category="Giaycotunhien" data-brand="NIKE" onclick="viewProduct('Giày đá bóng Nike Air Zoom Mercurial Vapor 16 Pro AG-PRO Mad Energy', '3500000', 'https://product.hstatic.net/1000061481/product/anh_sp_add_web_ballak02-01-01-01-01-2_c330437b069042c983662dcaf3431bb1_1024x1024.jpg', 'Nike')">
+            <img src="https://product.hstatic.net/1000061481/product/anh_sp_add_web_ballak02-01-01-01-01-2_c330437b069042c983662dcaf3431bb1_1024x1024.jpg" width="200" alt="giay2">
+            <h3>Giày đá bóng Nike Air Zoom Mercurial Vapor 16 Pro AG-PRO Mad Energy</h3>
+            <p class="gia">Giá: 3.500.000</p>
+            
+        </div>
+		<div class="product" data-category="Giayconhantao" data-brand="Mizuno" onclick="viewProduct('Giày đá bóng Mizuno Alpha II Elite TF Platinum Silver', '3000000', 'https://product.hstatic.net/1000061481/product/anh_sb_1-01-0-02-21241412422-2-2_9ac5d6eba1b64c0dbed84a6fa3f1c89e_1024x1024.jpg', 'Mizuno')">
+            <img src="https://product.hstatic.net/1000061481/product/anh_sb_1-01-0-02-21241412422-2-2_9ac5d6eba1b64c0dbed84a6fa3f1c89e_1024x1024.jpg" width="200" alt="giay3">
+            <h3>Giày đá bóng Mizuno Alpha II Elite TF Platinum Silver</h3>
+            <p class="gia">Giá: 3.000.000</p>
+           
+        </div>
+		<div class="product" data-category="Giayconhantao" data-brand="Mizuno" onclick="viewProduct('Giày đá bóng Mizuno Morelia Sala Elite AS TF Frontier Pack', '2000000', 'https://product.hstatic.net/1000061481/product/anh_sp_add77-01777883901-573-2_e9e65b8724a34533a902354eb461e851_1024x1024.jpg', 'Mizuno')">
+            <img src="https://product.hstatic.net/1000061481/product/anh_sp_add77-01777883901-573-2_e9e65b8724a34533a902354eb461e851_1024x1024.jpg" width="200" alt="giay4">
+            <h3>Giày đá bóng Mizuno Morelia Sala Elite AS TF Frontier Pack</h3>
+            <p class="gia">Giá: 2.000.000</p>
+            
+        </div>
+		<div class="product" data-category="Giayfutsal" data-brand="Adias" onclick="viewProduct('Giày đá bóng Adidas Top Sala Competition IC', '1500000', 'https://product.hstatic.net/1000061481/product/anh_sp_add_web_3-02-02-01-01-01-01-02_8bab1853087c460bb31a04d2477c8eba_1024x1024.jpg', 'Adias')">
+            <img src="https://product.hstatic.net/1000061481/product/anh_sp_add_web_3-02-02-01-01-01-01-02_8bab1853087c460bb31a04d2477c8eba_1024x1024.jpg" width="200" alt="giay5">
+            <h3>Giày đá bóng Adidas Top Sala Competition IC</h3>
+            <p class="gia">Giá: 1.500.000</p>
+            
+        </div>
+		<div class="product" data-category="Giayfutsal" data-brand="Desporte" onclick="viewProduct('Giày đá bóng Desporte Campinas JP6 IC DS2030', '1750000', 'https://product.hstatic.net/1000061481/product/anh_sp_add_web_ballak02-01-01-01-01-02-01_cd620c1cd6e64899986e515e2154ca8f_1024x1024.jpg', 'Desporte')">
+            <img src="https://product.hstatic.net/1000061481/product/anh_sp_add_web_ballak02-01-01-01-01-02-01_cd620c1cd6e64899986e515e2154ca8f_1024x1024.jpg" width="200" alt="giay6">
+            <h3>Giày đá bóng Desporte Campinas JP6 IC DS2030</h3>
+            <p class="gia">Giá: 1.750.000</p>
+           
+        </div>
+		<div class="product" data-category="Giaytreem" data-brand="NIKE" onclick="viewProduct('Giày đá bóng Nike Tiempo Legend 10 Academy TF Mad Ambition', '1890000', 'https://product.hstatic.net/1000061481/product/anh_sp_add_web_4-02-02-02-02-02-012-02-01_b7af4e2d2adf4dfbb98cca2fc8f86b58_1024x1024.jpg', 'Nike')">
+            <img src="https://product.hstatic.net/1000061481/product/anh_sp_add_web_4-02-02-02-02-02-012-02-01_b7af4e2d2adf4dfbb98cca2fc8f86b58_1024x1024.jpg" width="200" alt="giay7">
+            <h3>Giày đá bóng Nike Tiempo Legend 10 Academy TF Mad Ambition</h3>
+            <p class="gia">Giá: 1.890.000</p>
+          
+        </div>
+		<div class="product" data-category="Giaytreem" data-brand="Adias" onclick="viewProduct('Giày đá bóng adidas Predator Freak .3 TF Superspectral', '1900000', 'https://product.hstatic.net/1000061481/product/2c50ae962c60_8bcfaa51d9ce42d896708a3ba2657705_1024x1024.jpeg', 'Adias')">
+            <img src="https://product.hstatic.net/1000061481/product/2c50ae962c60_8bcfaa51d9ce42d896708a3ba2657705_1024x1024.jpeg" width="200" alt="giay8">
+            <h3>Giày đá bóng adidas Predator Freak .3 TF Superspectral</h3>
+            <p class="gia">Giá: 1.900.000</p>
+        </div>
+		<div class="product" data-category="Giayconhantao" data-brand="NIKE" onclick="viewProduct('Giày đá bóng Nike Air Zoom Mercurial Vapor 16 Pro TF Refresh', '2400000', 'https://product.hstatic.net/1000061481/product/anh_sp_add-01-01-01-04-07173-w3-2_330d9d2f836b4856b547b891608ef500_1024x1024.jpg', 'Nike')">
+            <img src="https://product.hstatic.net/1000061481/product/anh_sp_add-01-01-01-04-07173-w3-2_330d9d2f836b4856b547b891608ef500_1024x1024.jpg" width="200" alt="giay9">
+            <h3>Giày đá bóng Nike Air Zoom Mercurial Vapor 16 Pro TF Refresh</h3>
+            <p class="gia">Giá: 2.400.000</p>
+        </div>
+    </section>
+	</div>
+	<footer>
+		<p>Hotline: 01677120726</p>
+	<a href="https://www.facebook.com/quoc.tien.866467"><img src="https://www.svgrepo.com/show/3885/facebook.svg" alt="fb"></a>
+	</footer>
+	 <script>
+    function viewProduct(name, price, image, brand) {
+      // Encode dữ liệu rồi chuyển đến trang chi tiết
+      window.location.href = `product.html?name=${encodeURIComponent(name)}&price=${price}&image=${encodeURIComponent(image)}&brand=${encodeURIComponent(brand)}`;
+    }
+	 let selectedCategory = "all";
+  let selectedBrand = "all";
+
+  function filterProducts() {
+    const products = document.querySelectorAll(".product");
+
+    products.forEach(product => {
+      const category = product.getAttribute("data-category");
+      const brand = product.getAttribute("data-brand");
+
+      const matchCategory = (selectedCategory === "all" || category === selectedCategory);
+      const matchBrand = (selectedBrand === "all" || brand === selectedBrand);
+
+      if (matchCategory && matchBrand) {
+        product.style.display = "block";
+      } else {
+        product.style.display = "none";
+      }
+    });
+  }
+
+  // Xử lý click nút loại giày
+  document.querySelectorAll("button[data-filter]").forEach(btn => {
+    btn.addEventListener("click", (e) => {
+      selectedCategory = btn.getAttribute("data-filter");
+
+      // Xử lý active
+      document.querySelectorAll("button[data-filter]").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      filterProducts();
+    });
+  });
+
+  // Xử lý click nút thương hiệu
+  document.querySelectorAll("button[data-brand]").forEach(btn => {
+    btn.addEventListener("click", (e) => {
+      selectedBrand = btn.getAttribute("data-brand");
+
+      // Xử lý active
+      document.querySelectorAll("button[data-brand]").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      filterProducts();
+    });
+  });
+
+  // Lọc mặc định khi trang load
+  window.onload = () => filterProducts();
+function updateActive(buttons, activeButton) {
+  buttons.forEach(btn => btn.classList.remove("active"));
+  activeButton.classList.add("active");
+}
+
+// trong addEventListener:
+updateActive(filterButtons, button);
+updateActive(brandButtons, button);
+  </script>
+</body>
+</html>

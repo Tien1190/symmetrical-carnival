@@ -1,0 +1,168 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>thanh toán</title>
+<link rel="stylesheet" href="css.css">
+<style>
+	.product-info, .ship-info{
+		margin-left: 150px;
+		margin-right: 150px;
+	}
+	.productbuy{
+		display: flex;
+	}
+	#list{
+		border: 1px solid black;
+		height: 150px;
+		overflow: auto;
+		padding: 20px;
+		margin-top: 20px;
+	}
+	.productbuy img{
+		box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+	}
+	.right p{
+		margin-left: 10px;
+	}
+	#priceall{
+		border: 1px solid black;
+		display:flex;
+		width: 200px;
+		justify-content: flex-end;
+		margin-left: auto;
+		padding: 10px;
+	}
+	form{
+		margin-left: 140px; 
+	}
+	form input, textarea{
+		margin-left: 25px;
+		margin-top: 20px;
+		margin-bottom: 20px;
+	    border: 1px solid black;
+	}
+	#address{
+		width: 550px;
+	}
+	#number{
+		width: 550px;
+		height: 25px;
+	}
+	#note{
+		width: 550px;
+	}
+	#submit{
+		magrin-top: 50px;
+		margin-left: 600px;
+		height: 50px;
+		width: 100px;
+		background: red;
+		border:solid #AC9721;
+		color: white;
+	}
+</style>
+</head>
+<body>
+<nav class="navbar">
+	   <div class="top">
+            <div class="logo"><img src="https://i.ibb.co/fY3rrpWf/logo.png" width="100" alt="logo"></div>
+            <div class="search-bar">
+                <input type="text" placeholder="Tìm kiếm mặt hàng...">
+                <button>tìm kiếm</button>
+		</div>
+		   <div class="user">
+			   <button onclick="window.location.href='login.html'">Đăng nhập</button>
+		   </div>
+        </div>
+        <div class="menu">
+            <a href="TrangChu.html">TRANG CHỦ</a>
+            <a href="Giaybongda.html">GIÀY BÓNG ĐÁ</a>
+            <a href="Phukien.html">PHỤ KIỆN</a>
+			<a href="#">THƯƠNG HIỆU</a>
+			<a href="cartt.html">GIỎ HÀNG</a>
+			<a href="#">DỊCH VỤ</a>
+        </div>
+ </nav>
+<h2 style="margin-left: 100px;">THANH TOÁN</h2>
+<div class="product-info">
+ <h3>Thông tin sản phẩm</h3>
+ <ul id="list"></ul>
+ <p id="priceall"></p>
+</div>
+<div class="ship-info">
+<h3>Thông giao hàng</h3>
+<form>
+<label for="address">Địa chỉ:</label><br>
+<textarea type="text" rows="3" id="address" required></textarea>
+<br>
+<label for="number">Số điện thoại:</label><br>
+<input type="number" id="number" placeholder="Số điện thoại" required>
+<br>
+<label for="note">Ghi chú cho người giao:</label><br>
+<textarea name="message" id="note" rows="10" placeholder="ghi chú..."></textarea><br>
+<button type="submit" id="submit" onclick="xacnhan()">Mua hàng</button>
+</form>
+</div>
+<script>
+
+let params = new URLSearchParams(window.location.search);
+
+// Ưu tiên kiểm tra nếu có giỏ hàng (cart)
+let cartParam = params.get('cart');
+let totalParam = params.get('total');
+
+// Hoặc kiểm tra nếu có mua ngay 1 sản phẩm
+let nameParam = params.get('name');
+let priceParam = params.get('price');
+let imageParam = params.get('image');
+
+if (cartParam && totalParam) {
+    // Trường hợp mua từ giỏ hàng
+    let cart = decodeURIComponent(cartParam).split("|").filter(Boolean);
+    let total = decodeURIComponent(totalParam);
+
+    cart.forEach(item => {
+        let [name, img, price] = item.split("tach");
+
+        let productHTML = `
+            <div class="productbuy">
+                <div class="left"><img src="${img}" width="100"></div>
+                <div class="right">
+                    <p>${name}</p>
+                </div>
+            </div>
+        `;
+        document.getElementById("list").innerHTML += productHTML;
+    });
+
+    document.getElementById("priceall").innerText = "Tổng tiền: " + (+total).toLocaleString() + " VND";
+
+} else if (nameParam && priceParam && imageParam) {
+    // Trường hợp mua ngay 1 sản phẩm
+    let name = decodeURIComponent(nameParam);
+    let price = decodeURIComponent(priceParam);
+    let image = decodeURIComponent(imageParam);
+
+    let productHTML = `
+        <div class="productbuy">
+            <div class="left"><img src="${image}" width="100"></div>
+            <div class="right">
+                <p>${name}</p>
+            </div>
+        </div>
+    `;
+    document.getElementById("list").innerHTML = productHTML;
+
+    document.getElementById("priceall").innerText = "Tổng tiền: " + (+price).toLocaleString() + " VND";
+} else {
+    // Nếu không có dữ liệu
+    document.getElementById("list").innerHTML = "<p>Không có sản phẩm nào để thanh toán.</p>";
+    document.getElementById("priceall").innerText = "";
+}
+function xacnhan(){
+	alert("Đặt hàng thành công!");
+}
+</script>
+</body>
+</html>

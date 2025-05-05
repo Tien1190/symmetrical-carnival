@@ -1,0 +1,161 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>phukien</title>
+	<link rel="stylesheet" href="css.css">
+</head>
+
+<body>
+	<nav class="navbar">
+	   <div class="top">
+            <div class="logo"><img src="https://i.ibb.co/fY3rrpWf/logo.png" width="100" alt="logo"></div>
+            <div class="search-bar">
+                <input type="text" placeholder="Tìm kiếm mặt hàng...">
+                <button>tìm kiếm</button>
+		</div>
+		   <div class="user">
+           <button onclick="window.location.href='login.html'">Đăng nhập</button>
+		   </div>
+        </div>
+        <div class="menu">
+            <a href="TrangChu.html">TRANG CHỦ</a>
+            <a href="Giaybongda.html">GIÀY BÓNG ĐÁ</a>
+            <a href="Phukien.html">PHỤ KIỆN</a>
+			<a href="#">THƯƠNG HIỆU</a>
+			<a href="cartt.html">GIỎ HÀNG</a>
+			<a href="#">DỊCH VỤ</a>
+        </div>
+    </nav>
+	<div class="phukienbongda">
+	<div class="filter-asc-buttons">
+		 <h2>Các loại phụ kiện</h2>
+         <button data-filter="all">TẤT CẢ</button>
+         <button data-filter="quabongda">QUẢ BÓNG ĐÁ</button>
+         <button data-filter="gangtay">GĂNG TAY THỦ MÔN</button>
+		 <button data-filter="vobongda">VỚ BÓNG ĐÁ</button>
+		 <button data-filter="BALO">BALO TÚI SÁCH</button>
+		 <button data-filter="dungcu">DỤNG CỤ BÓNG ĐÁ</button>
+	</div>
+	<section class="product-asc-list">
+		<img src="../Downloads/phukienn.jpg" alt="bannerphukien" width="100%" height="200">
+        <div class="product" data-category="quabongda" onclick="viewProduct('Quả bóng đá Molten tiêu chuẩn F5N3400-A', '850000', 'https://product.hstatic.net/1000061481/product/9388a3394a3f43aaa1c3376742e158b9_21aa49e738624cc08b360793a933c3c1_1024x1024.jpg', 'Molten')">
+            <img src="https://product.hstatic.net/1000061481/product/9388a3394a3f43aaa1c3376742e158b9_21aa49e738624cc08b360793a933c3c1_1024x1024.jpg" width="200" alt="bong1">
+            <h3>Quả bóng đá Molten tiêu chuẩn F5N3400-A</h3>
+            <p class="gia">Giá: 850.000</p>
+            
+        </div>
+		<div class="product" data-category="quabongda" onclick="viewProduct('Quả bóng đá Molten tiêu chuẩn F5N3555', '1090000', 'https://product.hstatic.net/1000061481/product/c0acb8f1532b44e6a57375bb37ded6b2_70bca9ef92234d1ab03db8a40c3f27d6_1024x1024.jpg', 'Molten')">
+            <img src="https://product.hstatic.net/1000061481/product/c0acb8f1532b44e6a57375bb37ded6b2_70bca9ef92234d1ab03db8a40c3f27d6_1024x1024.jpg" width="200" alt="bong2">
+            <h3>Quả bóng đá Molten tiêu chuẩn F5N3555</h3>
+            <p class="gia">Giá: 1.090.000</p>
+            
+        </div>
+		<div class="product" data-category="quabongda" onclick="viewProduct('Quả bóng đá Nike Football Academy Plus Premier League', '1000000', 'https://product.hstatic.net/1000061481/product/aurora_fz2628-101_phsbz001-2000_conv_2_8964d3c44bba4798a5aa47c49938a041_1024x1024.jpeg', 'Nike')">
+            <img src="https://product.hstatic.net/1000061481/product/aurora_fz2628-101_phsbz001-2000_conv_2_8964d3c44bba4798a5aa47c49938a041_1024x1024.jpeg" width="200" alt="bong3">
+            <h3>Quả bóng đá Nike Football Academy Plus Premier League</h3>
+            <p class="gia">Giá: 1.000.000</p>
+           
+        </div>
+		<div class="product" data-category="gangtay" onclick="viewProduct('Găng tay thủ môn adidas Goalkeeper Gloves Predator Training Pure Victory', '699000', 'https://product.hstatic.net/1000061481/product/remove-bg.ai_1736928416755_f4416b8350e84b988ac6474436858d37_1024x1024.png', 'Adias')">
+            <img src="https://product.hstatic.net/1000061481/product/remove-bg.ai_1736928416755_f4416b8350e84b988ac6474436858d37_1024x1024.png" width="200" alt="gantay1">
+            <h3>Găng tay thủ môn adidas Goalkeeper Gloves Predator Training Pure Victory</h3>
+			<p class="gia">Giá: 699.000</p>
+        </div>
+		<div class="product" data-category="gangtay" onclick="viewProduct('Găng tay thủ môn adidas Goalkeeper Gloves Predator Training Vivid Horizon', '799000', 'https://product.hstatic.net/1000061481/product/03a87392d3204cb0a98e168f439acdfa_7be715c7fd1148d5a02a7c6c82414441_1024x1024.jpg', 'Adias')">
+            <img src="https://product.hstatic.net/1000061481/product/03a87392d3204cb0a98e168f439acdfa_7be715c7fd1148d5a02a7c6c82414441_1024x1024.jpg" width="200" alt="gangtay2">
+            <h3>Găng tay thủ môn adidas Goalkeeper Gloves Predator Training Vivid Horizon</h3>
+            <p class="gia">Giá: 799.000</p>
+            
+        </div>
+		<div class="product" data-category="vobongda" onclick="viewProduct('Vớ bóng đá NMS Classic 01 Freesize', '69000', 'https://product.hstatic.net/1000061481/product/2af24dee58864661a840558e8a452325_710bcf9dd29a4a4a88a683c4c6c36880_1024x1024.jpg', 'NMS')">
+            <img src="https://product.hstatic.net/1000061481/product/2af24dee58864661a840558e8a452325_710bcf9dd29a4a4a88a683c4c6c36880_1024x1024.jpg" width="200" alt="vo1">
+            <h3>Vớ bóng đá NMS Classic 01 Freesize</h3>
+            <p class="gia">Giá: 69.000</p>
+           
+        </div>
+		<div class="product" data-category="vobongda" onclick="viewProduct('Vớ vân chống trơn NMS WAVE 365', '45000', 'https://product.hstatic.net/1000061481/product/nms05822_85f761727b234a4d8e72857a9abe81d9_1024x1024.jpg', 'NMS')">
+            <img src="https://product.hstatic.net/1000061481/product/nms05822_85f761727b234a4d8e72857a9abe81d9_1024x1024.jpg" width="200" alt="vo2">
+            <h3>Vớ vân chống trơn NMS WAVE 365</h3>
+            <p class="gia">Giá: 45.000</p>
+           
+        </div>
+		<div class="product" data-category="vobongda" onclick="viewProduct('Vớ chống trơn NMS Anti-Slip Creator 365 Crew Sock', '75000', 'https://product.hstatic.net/1000061481/product/5016c8c312884d4796b95bcb5974ea7e_4ed2609cdd5b485cb04a465ede799cca_1024x1024.jpg', 'NMS')">
+            <img src="https://product.hstatic.net/1000061481/product/5016c8c312884d4796b95bcb5974ea7e_4ed2609cdd5b485cb04a465ede799cca_1024x1024.jpg" width="200" alt="vo3">
+            <h3>Vớ chống trơn NMS Anti-Slip Creator 365 Crew Sock</h3>
+            <p class="gia">Giá: 75.000</p>
+           
+        </div>
+		<div class="product" data-category="vobongda" onclick="viewProduct('Pack 3 đôi vớ bóng đá Nike Socks Everyday Cush Crew', '89000', 'https://product.hstatic.net/1000061481/product/5fee3c36b2ba4409b236b9b69cf640ef_cf4386278ae440efaf322a7f8170662b_1024x1024.jpeg', 'Nike')">
+            <img src="https://product.hstatic.net/1000061481/product/5fee3c36b2ba4409b236b9b69cf640ef_cf4386278ae440efaf322a7f8170662b_1024x1024.jpeg" width="200" alt="vo4">
+            <h3>Pack 3 đôi vớ bóng đá Nike Socks Everyday Cush Crew</h3>
+            <p class="gia">Giá: 89.000</p>
+           
+        </div>
+		<div class="product" data-category="BALO" onclick="viewProduct('Túi trống NMS 2025', '150000', 'https://product.hstatic.net/1000061481/product/857f10b9b7874ac98fee069ad56ffb51_3d432b36f9ca4e90a24cbc4230b618b2_1024x1024.jpg', 'NMS')">
+            <img src="https://product.hstatic.net/1000061481/product/857f10b9b7874ac98fee069ad56ffb51_3d432b36f9ca4e90a24cbc4230b618b2_1024x1024.jpg" width="200" alt="BALO1">
+            <h3>Túi trống NMS 2025</h3>
+            <p class="gia">Giá: 150.000</p>
+          
+        </div>
+		<div class="product" data-category="BALO" onclick="viewProduct('Túi bao tử NMS 2025', '125000', 'https://product.hstatic.net/1000061481/product/nms02687_a1a5a414151743069e5a1161a4b141db_1024x1024.jpg', 'NMS')">
+            <img src="https://product.hstatic.net/1000061481/product/nms02687_a1a5a414151743069e5a1161a4b141db_1024x1024.jpg" width="200" alt="BALO2">
+            <h3>Túi bao tử NMS 2025</h3>
+            <p class="gia">Giá: 125.000</p>
+       
+        </div>
+		<div class="product" data-category="BALO" onclick="viewProduct('Balo Neymarsport FOOTBALL Backpack 2024', '225000', 'https://product.hstatic.net/1000061481/product/nms03836-0_f5585de6cb174e168b704c746ff05a47_1024x1024.jpg', 'NMS')">
+            <img src="https://product.hstatic.net/1000061481/product/nms03836-0_f5585de6cb174e168b704c746ff05a47_1024x1024.jpg" width="200" alt="BALO3">
+            <h3>Balo Neymarsport FOOTBALL Backpack 2024</h3>
+            <p class="gia">Giá: 225.000</p>
+ 
+        </div>
+		<div class="product" data-category="dungcu" onclick="viewProduct('Ống hít thông mũi Starbalm Sport Inhaler', '45000', 'https://product.hstatic.net/1000061481/product/d18fe2d875254f2898d044019147b80f_3d78f60c775740f3913d3d32de6939c4_1024x1024.jpg', 'Starbalm')">
+            <img src="https://product.hstatic.net/1000061481/product/d18fe2d875254f2898d044019147b80f_3d78f60c775740f3913d3d32de6939c4_1024x1024.jpg" width="200" alt="dungcu1">
+            <h3>Ống hít thông mũi Starbalm Sport Inhaler</h3>
+            <p class="gia">Giá: 45.000</p>
+        </div>
+		<div class="product" data-category="dungcu" onclick="viewProduct('Everlesto Shin Guards Black / White / Solar Red', '245000', 'https://product.hstatic.net/1000061481/product/610bacaad9916392edd7e174a1f9e0b2_6ffce0554852451fa5d7c22463a52d24_1024x1024.png', 'Adias')">
+            <img src="https://product.hstatic.net/1000061481/product/610bacaad9916392edd7e174a1f9e0b2_6ffce0554852451fa5d7c22463a52d24_1024x1024.png" width="200" alt="dungcu2">
+            <h3>Everlesto Shin Guards Black / White / Solar Red</h3>
+            <p class="gia">Giá: 245.000</p>
+        </div>
+		<div class="product" data-category="dungcu" onclick="viewProduct('Combo 5 cuộn băng keo cơ thể thao', '20000', 'https://product.hstatic.net/1000061481/product/g-the-thao-1492660905-6890935-234dc22226ea1b031e894df7abd48924-product_c1eacdd34e794e1daa91738c541d89ca_1024x1024.jpg', 'NMS')">
+            <img src="https://product.hstatic.net/1000061481/product/g-the-thao-1492660905-6890935-234dc22226ea1b031e894df7abd48924-product_c1eacdd34e794e1daa91738c541d89ca_1024x1024.jpg" width="200" alt="dungcu3">
+            <h3>Combo 5 cuộn băng keo cơ thể thao</h3>
+            <p class="gia">Giá: 20.000</p>
+        </div>
+    </section>
+	</div>
+	<footer>
+    <p>Hotline: 01677120726</p>
+	<a href="https://www.facebook.com/quoc.tien.866467"><img src="https://www.svgrepo.com/show/3885/facebook.svg" alt="fb"></a>
+	</footer>
+	 <script>
+    function viewProduct(name, price, image, brand) {
+      // Encode dữ liệu rồi chuyển đến trang chi tiết
+      window.location.href = `product.html?name=${encodeURIComponent(name)}&price=${price}&image=${encodeURIComponent(image)}&brand=${encodeURIComponent(brand)}`;
+    }
+	document.addEventListener("DOMContentLoaded", function () {
+    const filterButtons = document.querySelectorAll(".filter-asc-buttons button");
+    const products = document.querySelectorAll(".product");
+
+    filterButtons.forEach(button => {
+      button.addEventListener("click", () => {
+        const filterValue = button.getAttribute("data-filter");
+
+        products.forEach(product => {
+          const productCategory = product.getAttribute("data-category");
+
+          if (filterValue === "all" || productCategory === filterValue) {
+            product.style.display = "block";
+          } else {
+            product.style.display = "none";
+          }
+        });
+      });
+    });
+  });
+  </script>
+</body>
+</html>

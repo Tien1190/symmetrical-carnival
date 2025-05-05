@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Chi tiết sản phẩm</title>
+	<link rel="stylesheet" href="css.css">
+  <style>
+	  
+    #product-image { 
+		width: 400px; 
+		display: block; 
+		margin-bottom: 10px; 
+		box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+	  }
+	  .info{
+		  display: flex;
+		  padding: 100px;
+		  column-gap: 20px;
+	  }
+	  .right{
+		  margin-left: 100px;
+	  }
+	  #product-price{
+		  color: red;
+		  font-weight: bold;
+		  font-size: 24px;
+	  }
+	  #product-brand{
+		  font-weight: bold;
+		  color:#514F4F;
+	  }
+	  #buy{
+		  border:solid #AC9721;
+		  background: #555555;
+		  height: 50px;
+		  width: 100px;
+		  color: white;
+	  }
+	  #buy:hover{
+		  color: darkgoldenrod;
+	  }
+	  #addtocart{
+		  border:solid #AC9721;
+		  background: red;
+		  height: 50px;
+		  width: 150px;
+		  color: white;
+	  }
+	  #addtocart:hover {
+		  color: darkgoldenrod;
+	  }
+	  
+  </style>
+</head>
+<body>
+<nav class="navbar">
+	   <div class="top">
+            <div class="logo"><img src="https://i.ibb.co/fY3rrpWf/logo.png" width="100" alt="logo"></div>
+            <div class="search-bar">
+                <input type="text" placeholder="Tìm kiếm mặt hàng...">
+                <button>tìm kiếm</button>
+		</div>
+		   <div class="user">
+			   <button onclick="window.location.href='login.html'">Đăng nhập</button>
+		   </div>
+        </div>
+        <div class="menu">
+            <a href="TrangChu.html">TRANG CHỦ</a>
+            <a href="Giaybongda.html">GIÀY BÓNG ĐÁ</a>
+            <a href="Phukien.html">PHỤ KIỆN</a>
+			<a href="#">THƯƠNG HIỆU</a>
+			<a href="cartt.html">GIỎ HÀNG</a>
+			<a href="#">DỊCH VỤ</a>
+        </div>
+    </nav>
+  <div class="info">
+  <div class="left">
+  <img id="product-image" src="" alt="">
+  </div>
+  <div class="right">
+  <h1 id="product-name"></h1>
+  <p id="product-price"></p>
+  <p id="product-brand"></p>
+  <p style="font-weight: bold; color:#514F4F;">Mã sản phẩm:</p>
+  <p style="font-weight: bold; color:#514F4F;">Mã giảm giá</p>
+  <img src="../Pictures/Screenshots/mgg.png" width="80%" alt="ma giam gia"><br>
+  <button id="buy" onclick="buynow()">Mua ngay</button>
+  <button id="addtocart" onclick="addtocart()">Thêm vào giỏ</button>
+  
+  </div>
+  </div>
+  <script>
+	 
+    // Hàm lấy giá trị từ URL
+    function getQueryParam(param) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(param);
+    }
+
+    // Lấy dữ liệu từ URL
+    const name = getQueryParam('name');
+    const price = getQueryParam('price');
+    const image = getQueryParam('image');
+	const brand=getQueryParam('brand');
+
+    // Hiển thị lên trang
+    document.getElementById('product-name').textContent = name;
+    document.getElementById('product-price').textContent = '   '+ price + ' đ';
+	document.getElementById('product-brand').textContent = 'Nhãn Hiệu: '+brand;
+    document.getElementById('product-image').src = image;
+    document.getElementById('product-image').alt = name;
+	 function addtocart() {
+  const name = document.getElementById('product-name').textContent.trim();
+  const price = document.getElementById('product-price').textContent.replace('đ', '').trim();
+  const image = document.getElementById('product-image').src;
+
+  let cart = localStorage.getItem("cart") || ""; // Lấy dữ liệu cũ nếu có
+            cart += name +"tach"+image+ "tach" + price + "|"; // Thêm sản phẩm vào chuỗi
+            localStorage.setItem("cart", cart);
+            alert("Đã thêm vào giỏ hàng!");
+}
+  </script>
+ <script>
+	 function buynow() {
+	const name = document.getElementById('product-name').textContent.trim();
+  const price = document.getElementById('product-price').textContent.replace('đ', '').trim();
+  const image = document.getElementById('product-image').src;
+	window.location.href =`thanhtoan.html?name=${encodeURIComponent(name)}&price=${encodeURIComponent(price)}&image=${encodeURIComponent(image)}`;
+}
+</script>
+</body>
+</html>

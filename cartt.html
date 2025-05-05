@@ -1,0 +1,138 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>cart</title>
+<link rel="stylesheet" href="css.css">
+<style>
+.danhsach{
+	border: 2px solid black;
+	margin-top:20px;
+    margin-right: 100px;
+	margin-left: 100px;
+	height: 400px;
+	overflow: auto;
+}
+.productcart {
+	display: flex;
+	margin-top: 20px;
+}
+#cartList p{
+	color:#666666;
+}
+.productcart img{
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+	box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3)
+}
+.right{
+		margin-left: 20px;
+}
+.buttoncart{
+		display: flex;
+		justify-content: flex-end;
+		margin-right: 100px;
+		margin-top: 20px;
+	    	gap:20px;
+}
+	#totalPrice{
+		color: red;
+		font-weight: bold;
+		margin-right: 490px;
+	}
+.buttoncart button{
+		height: 50px;
+}
+#buy-now{
+	border:solid #AC9721;
+    background: red;
+	color: white;
+}
+	.delete-cart, .go-back{
+		border:solid #AC9721;
+		  background: #555555;
+		  color: white;
+	}
+</style>
+</head>
+<body>
+<nav class="navbar">
+	   <div class="top">
+            <div class="logo"><img src="https://i.ibb.co/fY3rrpWf/logo.png" width="100" alt="logo"></div>
+            <div class="search-bar">
+                <input type="text" placeholder="Tìm kiếm mặt hàng...">
+                <button>tìm kiếm</button>
+		</div>
+		   <div class="user">
+			   <button onclick="window.location.href='login.html'">Đăng nhập</button>
+		   </div>
+        </div>
+        <div class="menu">
+            <a href="TrangChu.html">TRANG CHỦ</a>
+            <a href="Giaybongda.html">GIÀY BÓNG ĐÁ</a>
+            <a href="Phukien.html">PHỤ KIỆN</a>
+			<a href="#">THƯƠNG HIỆU</a>
+			<a href="cartt.html">GIỎ HÀNG</a>
+			<a href="#">DỊCH VỤ</a>
+        </div>
+    </nav>
+	<h2 style="margin-left: 100px;">GIỎ HÀNG CỦA BẠN</h2>
+    <div class="danhsach">
+	<ul id="cartList"></ul>
+	</div>
+	<div class="buttoncart">
+	<p id="totalPrice"></p>
+	<button id="buy-now">Mua Ngay</button>
+    <button class="delete-cart" onclick="localStorage.removeItem('cart'); location.reload()">Xóa Giỏ Hàng</button>
+    <button class="go-back" onclick="window.location.href='TrangChu.html'">Quay Lại Mua Hàng</button>
+	</div>
+	<script>
+	 let cart = (localStorage.getItem("cart") || "").split("|").filter(Boolean);
+let total = 0;
+let cartList = document.getElementById("cartList");
+
+if (cart.length === 0) {
+    cartList.innerHTML = "<p>Chưa có sản phẩm được thêm vào.</p>";
+} else {
+    cart.forEach(item => {
+        let [name, img, price] = item.split("tach");
+        total += +price;
+        cartList.innerHTML += `
+            <div class="productcart">
+                <div class="left">
+                    <img src="${img}" width="200">
+                </div>
+                <div class="right">
+                    <h2>${name}</h2>
+                    <p class="gia">${price} VND</p>
+                </div>
+            </div>
+        `;
+    });
+
+    document.getElementById("totalPrice").innerText = "Tổng tiền: " + total.toLocaleString() + " VND";
+}
+
+var loggedInUser = localStorage.getItem("loggedInUser");
+document.getElementById("buy-now").addEventListener("click", function() {
+    // Lấy giỏ hàng
+    let cart = (localStorage.getItem("cart") || "").split("|").filter(Boolean);
+    let total = 0;
+
+    // Xử lý tổng tiền
+    cart.forEach(item => {
+        let [name, img, price] = item.split("tach");
+        total += +price; // +price để ép kiểu sang số
+    });
+
+    // Encode giỏ hàng và tổng tiền
+    let encodedCart = encodeURIComponent(cart.join("|"));
+    let encodedTotal = encodeURIComponent(total);
+
+    // Chuyển trang, gửi cart + total
+    window.location.href = `thanhtoan.html?cart=${encodedCart}&total=${encodedTotal}`;
+});
+	</script>
+</body>
+</html>

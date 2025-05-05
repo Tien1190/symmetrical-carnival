@@ -1,0 +1,101 @@
+@charset "utf-8";
+/* CSS Document */
+	body {
+    font-family: Arial;
+    background: #555555;
+    display: flex;
+    justify-content: center;
+	align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.wrapper {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    width: 350px;
+}
+
+.wrapper-heading h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+
+.input_field {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.input_field input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.input_field input:focus {
+    border-color: #74ebd5;
+    outline: none;
+}
+
+.btn {
+    width: 100%;
+    background: #74ebd5;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    color: white;
+    font-weight: bold;
+	margin-top: 5px;
+}
+
+.btn:hover {
+    background: #5ec0b0;
+}
+
+.signup-link {
+    display: block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #5ec0b0;
+    font-weight: bold;
+}
+
+.signup-link:hover {
+    text-decoration: underline;
+}
+.back a {
+	text-decoration: none;
+    display: block;
+    margin-top: 10px;
+    color: #5ec0b0;
+    font-weight: bold;
+	front-size: 10px;
+		}
+.login-link {
+	display: block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #5ec0b0;
+    font-weight: bold;
+}
+
+.login-link:hover {
+    text-decoration: underline;
+}
+.back {
+	text-decoration: none;
+    color: #5ec0b0;
+    font-weight: bold;
+	front-size: 10px;
+	margin-top: 10px;
+}
+.back:hover{
+	text-decoration: underline;
+}
